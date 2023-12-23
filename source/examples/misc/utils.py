@@ -9,6 +9,10 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
+#import seaborn as sns
+
+
+
 
 def show_images(images: list, labels: list[str]=None, n_cols: int=3):
     """
@@ -86,6 +90,7 @@ def plot_MI_planes(MI_X_L: dict, MI_L_Y: dict, filtered_MI_X_L: dict=None, filte
             subplot_ax.plot(filtered_MI_X_L[layer_name], filtered_MI_L_Y[layer_name], color='red')
         else:
             subplot_ax.plot(x, y)
+            #subplot_ax.scatter(x, y, cmap=list(range(len(x))))
             
     plt.show();
 
@@ -165,7 +170,7 @@ def save_results(results: dict, settings: dict, path: Path):
     Save IP experiments results (parameters, metrics, IP data, ...).
     """
     
-    directory_path = path / (datetime.now().strftime("%d-%b-%Y_%H:%M:%S") + "/")
+    directory_path = path / (datetime.now().strftime("%d-%b-%Y_%H-%M-%S") + "/")
     os.makedirs(directory_path, exist_ok=True)
     
     # Metrics.
