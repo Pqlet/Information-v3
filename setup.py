@@ -18,7 +18,6 @@ setup(
     packages=find_packages(where="source/python"),
     package_dir={"": "source/python"},
     author="Ivan Butakov",
-    additions="Nikita Kurdiukov"
     author_email="vanessbut@yandex.ru",
     description="Mutual information toolbox",
 )
